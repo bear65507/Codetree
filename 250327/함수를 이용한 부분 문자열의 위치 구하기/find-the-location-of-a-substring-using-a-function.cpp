@@ -10,6 +10,8 @@ bool IsSame(int tidx)
     int pidx = 0;
     while (tidx < text.length())
     {
+        if (pidx == pattern.length())
+            return true;
         if (text[tidx] != pattern[pidx])
             return false;
         tidx++;
