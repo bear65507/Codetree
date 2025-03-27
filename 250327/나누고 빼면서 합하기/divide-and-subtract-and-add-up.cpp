@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int n, m;
@@ -8,16 +7,19 @@ int A[100];
 int DivideNAdd(int arr[], int m)
 {
     int sum = 0;
-    while(m >= 1)
+    sum += arr[m - 1];
+    while (m > 1)
     {
         if (m % 2 == 1)
         {
-            sum += arr[m - 1];
             m--;
+            sum += arr[m - 1];
         }
         else
-            sum += arr[m - 1];
+        {
             m /= 2;
+            sum += arr[m - 1];
+        }
     }
     return sum;
 }
@@ -30,6 +32,6 @@ int main() {
     }
 
     cout << DivideNAdd(A, m) << endl;
-     
+
     return 0;
 }
