@@ -5,17 +5,25 @@ int a, b;
 
 bool Is369(int n)
 {
-    int target = n % 10;
-    if (target == 3 or target == 6 or target == 9)
-        return true;
-    else
-        return false;
+    int target = n, idx = 0;
+    int n_arr[8] = { 0 };
+    while (target != 0)
+    {
+        n_arr[idx] = target % 10;
+        idx++;
+        target /= 10;
+    }
+    for (int i = idx; i >= 0; i--)
+    {
+        if (n_arr[i] != 0 and n_arr[i] % 3 == 0)
+            return true;
+    }
+    return false;
 }
 
 bool IsThreeTimes(int n)
 {
-    int num10 = n / 10;
-    if (n % 3 == 0 or num10 % 3 == 0)
+    if (n % 3 == 0)
         return true;
     else
         return false;
