@@ -12,7 +12,7 @@ void FindMedian(int arr[])
         if ((i + 1) % 2 == 1)
         {
             sort(arr, arr + (i + 1));
-            int medianIdx = i / 2; // 1 2 3 i = 2 j 
+            int medianIdx = i / 2;
             cout << arr[medianIdx] << " ";
         }
     }
