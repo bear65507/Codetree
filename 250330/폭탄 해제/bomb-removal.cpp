@@ -34,5 +34,6 @@ int main() {
     Deactivation *da = new Deactivation(unlock_code, wire_color, seconds);
     da->PrintInfo();
 
+    delete da;
     return 0;
 }
