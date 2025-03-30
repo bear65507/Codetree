@@ -31,8 +31,8 @@ public:
 int main() {
     cin >> unlock_code >> wire_color >> seconds;
 
-    Deactivation da = Deactivation(unlock_code, wire_color, seconds);
-    da.PrintInfo();
+    Deactivation *da = new Deactivation(unlock_code, wire_color, seconds);
+    da->PrintInfo();
 
     return 0;
 }
