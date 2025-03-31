@@ -29,10 +29,12 @@ int FindLastName(Info info[])
 {
     int idx = 0;
     int last_idx = -1;
+    char last_name = 0;
     while (info[idx]._name != "")
     {
-        if (info[idx]._name[0] > info[idx + 1]._name[0])
+        if (info[idx]._name[0] > last_name)
         {
+            last_name = info[idx]._name[0];
             last_idx = idx;
         }
         idx++;
