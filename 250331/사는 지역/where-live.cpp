@@ -1,23 +1,19 @@
 #include <iostream>
 #define MAX_N 10
-
 using namespace std;
 
 int n;
 string name[MAX_N], street_address[MAX_N], region[MAX_N];
 
-class Info
+class PersonInfo
 {
 public:
-    Info()
+    PersonInfo() { }
+    PersonInfo(string n, string a, string r)
     {
-
-    }
-    Info(string name, string address, string region)
-    {
-        this->_name = name;
-        this->_address = address;
-        this->_region = region;
+        this->_name = n;
+        this->_address = a;
+        this->_region = r;
     }
 public:
     string _name;
@@ -25,47 +21,39 @@ public:
     string _region;
 };
 
-int FindLastName(Info info[])
+int Compare(PersonInfo infos[])
 {
+    string word = " ";
     int idx = 0;
-    int last_idx = -1;
-    char last_name = 0;
-    while (info[idx]._name != "")
+    for (int i = 0; i < n; i++)
     {
-        if (info[idx]._name[0] > last_name)
+        if (infos[i]._name > word)
         {
-            last_name = info[idx]._name[0];
-            last_idx = idx;
+            word = infos[i]._name;
+            idx = i;
         }
-        idx++;
     }
-
-    return last_idx;
-}
-
-void PrintInfo(Info infos[], int idx)
-{
-    cout << "name " << infos[idx]._name << endl;
-    cout << "addr " << infos[idx]._address << endl;
-    cout << "city " << infos[idx]._region << endl;
+    return idx;
 }
 
 int main() {
     cin >> n;
 
-    int idx = 0;
-    Info infos[MAX_N];
+    int targetIdx;
+    PersonInfo Infos[MAX_N];
     for (int i = 0; i < n; i++) {
         cin >> name[i];
         cin >> street_address[i];
         cin >> region[i];
 
-        Info info = Info(name[i], street_address[i], region[i]);
-        infos[i] = info;
+        Infos[i] = PersonInfo(name[i], street_address[i], region[i]);
     }
-    
-    idx = FindLastName(infos);
-    PrintInfo(infos, idx);
+
+    targetIdx = Compare(Infos);
+
+    cout << "name " << Infos[targetIdx]._name << endl;
+    cout << "addr " << Infos[targetIdx]._address << endl;
+    cout << "city " << Infos[targetIdx]._region << endl;
 
     return 0;
 }
