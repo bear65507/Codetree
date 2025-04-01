@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 using namespace std;
 
 string name[5];
@@ -50,6 +51,8 @@ int main() {
 
         pi[i] = PersonInfo(name[i], height[i], weight[i]);
     }
+
+    cout << fixed << setprecision(1);
 
     sort(pi, pi + 5, CompareByName);
     cout << "name" << endl;
