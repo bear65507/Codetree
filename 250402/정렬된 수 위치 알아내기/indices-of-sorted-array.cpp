@@ -25,6 +25,8 @@ public:
 
 bool Compare(Numbers a, Numbers b)
 {
+    if (a._value == b._value)
+        return a._index < b._index;
     return a._value < b._value;
 }
 
@@ -33,18 +35,19 @@ bool CompareByIndex(Numbers a, Numbers b)
     return a._index < b._index;
 }
 
-void PrintInfo(Numbers ns[])
+void PrintInfo(Numbers ns[]) 
 {
     for (int i = 0; i < N; i++)
     {
-        cout << ns[i]._currentIndex << " ";
+        cout << ns[i]._currentIndex << " "; 
     }                                       
 }
 
 int main() {
     cin >> N;
 
-    Numbers* ns = new Numbers[1000];
+    //Numbers* ns = new Numbers[1000];
+    Numbers ns[1000];
     for (int i = 0; i < N; i++) {
         cin >> sequence[i];
 
@@ -61,6 +64,6 @@ int main() {
 
     PrintInfo(ns);
 
-    delete[] ns;
+    //delete[] ns;
     return 0;
 }
