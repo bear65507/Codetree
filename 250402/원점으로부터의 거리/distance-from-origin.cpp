@@ -48,6 +48,8 @@ public:
 
 bool Compare(Pos p1, Pos p2)
 {
+    if (p1._distance == p2._distance)
+        return p1._number < p2._number;
     return p1._distance < p2._distance;
 }
 
