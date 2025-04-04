@@ -9,6 +9,8 @@ int DateToDays(int start_m, int start_d, int dest_m, int dest_d)
     int month = start_m, day = start_d;
     int elsapedDays = 0;
     int daysinMonth[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    if (month == dest_m and day == dest_d)
+        return elsapedDays;
 
     if (dest_m > month or (month == dest_m and dest_d > day))
     {
