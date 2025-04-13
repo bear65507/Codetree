@@ -9,7 +9,7 @@ int arr[100000];
 
 void RadixSort(int arr[])
 {
-    for (int pos = 0; pos < 5; pos++)
+    for (int pos = 0; pos <= 5; pos++)
     {
         vector<vector<int>> arr_new(10, vector<int>());
         for (int i = 0; i < n; i++)
