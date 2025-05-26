@@ -8,6 +8,8 @@ int main() {
     for(int i = 0; i < 100; i++)
     {
         cin >> S;
+        if (S == 0)
+            break;
         if (S < 10)
             continue;
         score[S / 10 - 1]++;
