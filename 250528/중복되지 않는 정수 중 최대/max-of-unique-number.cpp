@@ -12,6 +12,7 @@ int main() {
         cin >> nums[i];
     }
 
+    sort(nums, nums + N, greater<int>());
     bool isDup = false;
     for (int i = 0; i < N; i++)
     {
